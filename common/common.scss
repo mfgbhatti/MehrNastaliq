@@ -1,0 +1,64 @@
+@font-face {
+  font-family: MehrNastaliqTrue;
+  src: url($MehrNastaliqTrue) format("truetype");
+}
+
+@font-face {
+  font-family: MehrNastaliqWeb;
+  src: url($MehrNastaliqWeb) format("woff2");
+}
+
+:root {
+  --font-family: MehrNastaliqWeb, Arial, sans-serif;
+  --heading-font-family: MehrNastaliqWeb, Arial, sans-serif;
+
+  --base-font-size: 1.125em;
+  /* 18px */
+
+  --tertiary: #0044aa;
+
+  // Common line-heights
+  --line-height-small: 1.75;
+  --line-height-medium: 1.9; // Headings or large text
+  --line-height-large: 2.2; // Normal or small text
+
+  --font-variant-ligatures: normal;
+  --font-feature-settings: normal;
+}
+
+html {
+  font-variant-ligatures: var(--font-variant-ligatures);
+}
+
+.d-header {
+  height: 5em;
+}
+
+@media (prefers-color-scheme: dark) {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-variant-ligatures: var(--font-variant-ligatures);
+    font-feature-settings: var(--font-feature-settings);
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-variant-ligatures: var(--font-variant-ligatures);
+  font-feature-settings: var(--font-feature-settings);
+
+}
+
+.extra-info-wrapper .topic-link {
+  overflow: initial;
+  margin-top: 0.875em;
+}
