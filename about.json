@@ -7,6 +7,6 @@
   "license_url": "https://github.com/mfgbhatti/MehrNastaliq/blob/main/LICENSE",
   "assets": {
     "MehrNastaliqTrue": "assets/MehrNastaliq.ttf",
-    "MehrNastaliqWeb": "assets/MehrNastaliq.woff2"
+    "MehrNastaliqWeb": "assets/MehrNastaliq.woff"
   }
 }
