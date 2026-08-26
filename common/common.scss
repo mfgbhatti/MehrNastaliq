@@ -25,7 +25,7 @@
   --font-feature-settings: normal;
 }
 
-// Actually apply the base font size site-wide (this line was missing)
+// Apply the base font size site-wide
 html {
   font-size: var(--base-font-size);
   font-variant-ligatures: var(--font-variant-ligatures);
@@ -38,25 +38,49 @@ body,
   line-height: var(--line-height-large);
 }
 
-// Headings get their own, slightly smaller, line-height
+// Headings
 h1, h2, h3, h4, h5, h6 {
   line-height: var(--line-height-medium);
   font-variant-ligatures: var(--font-variant-ligatures);
   font-feature-settings: var(--font-feature-settings);
 }
 
-// Menus / nav / small UI text: smaller line-height, but NOT zero —
-// they still need room or ligatures clip
-.d-header,
-.nav-pills,
+// --- Sidebar / admin nav / user-preferences nav / dropdowns ---
+// These use small fixed-height rows in Discourse core, which clip
+// the dots above letters like ن and ظ. Force them open.
+.sidebar-container,
+.sidebar-section-link-wrapper,
+.sidebar-section-link,
+.sidebar-section-link-content-text,
+.admin-nav,
+.admin-nav .nav-stacked,
+.admin-nav .nav-stacked li a,
+.user-secondary-navigation,
+.user-secondary-navigation .nav-stacked li a,
+.nav-stacked li a,
+.select-kit-row,
+.select-kit-collection,
 .dropdown-menu,
-.select-kit,
-.badge-category,
-.topic-list {
-  line-height: var(--line-height-small);
+.fk-d-menu,
+.fk-d-menu__inner-content {
+  line-height: var(--line-height-small) !important;
+  height: auto !important;
+  min-height: 2.25em;
+  overflow: visible !important;
 }
 
-// Let the header grow instead of clipping content with a fixed height
+// Their parent list items / wrapper rows are often the actual
+// fixed-height offenders (not the text itself) — open those too
+.sidebar-section-link-wrapper,
+.admin-nav .nav-stacked li,
+.user-secondary-navigation .nav-stacked li,
+.select-kit-row {
+  height: auto !important;
+  min-height: 2.25em;
+  display: flex;
+  align-items: center;
+}
+
 .d-header {
   min-height: 5em;
   height: auto;
