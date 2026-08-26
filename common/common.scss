@@ -5,7 +5,7 @@
 
 @font-face {
   font-family: MehrNastaliqWeb;
-  src: url($MehrNastaliqWeb) format("woff2");
+  src: url($MehrNastaliqWeb) format("woff");
 }
 
 :root {
@@ -13,49 +13,60 @@
   --heading-font-family: MehrNastaliqWeb, Arial, sans-serif;
 
   --base-font-size: 1.125em;
-  /* 18px */
 
   --tertiary: #0044aa;
 
   // Common line-heights
-  --line-height-small: 1.75;
-  --line-height-medium: 1.9; // Headings or large text
-  --line-height-large: 2.2; // Normal or small text
+  --line-height-small: 1.75;   // compact UI: menus, dropdowns, badges
+  --line-height-medium: 1.9;   // headings
+  --line-height-large: 2.2;    // normal post/body text
 
   --font-variant-ligatures: normal;
   --font-feature-settings: normal;
 }
 
+// Actually apply the base font size site-wide (this line was missing)
 html {
+  font-size: var(--base-font-size);
   font-variant-ligatures: var(--font-variant-ligatures);
 }
 
+// Give body text enough vertical room for tall Nastaliq ligatures
+body,
+.cooked,
+.post-stream {
+  line-height: var(--line-height-large);
+}
+
+// Headings get their own, slightly smaller, line-height
+h1, h2, h3, h4, h5, h6 {
+  line-height: var(--line-height-medium);
+  font-variant-ligatures: var(--font-variant-ligatures);
+  font-feature-settings: var(--font-feature-settings);
+}
+
+// Menus / nav / small UI text: smaller line-height, but NOT zero —
+// they still need room or ligatures clip
+.d-header,
+.nav-pills,
+.dropdown-menu,
+.select-kit,
+.badge-category,
+.topic-list {
+  line-height: var(--line-height-small);
+}
+
+// Let the header grow instead of clipping content with a fixed height
 .d-header {
-  height: 5em;
+  min-height: 5em;
+  height: auto;
 }
 
 @media (prefers-color-scheme: dark) {
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  h1, h2, h3, h4, h5, h6 {
     font-variant-ligatures: var(--font-variant-ligatures);
     font-feature-settings: var(--font-feature-settings);
   }
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-variant-ligatures: var(--font-variant-ligatures);
-  font-feature-settings: var(--font-feature-settings);
-
 }
 
 .extra-info-wrapper .topic-link {
