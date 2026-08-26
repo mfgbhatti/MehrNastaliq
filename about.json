@@ -1,6 +1,9 @@
 {
   "name": "مہر نستعلیق فونٹ",
-  "about_url": "https://github.com/mfgbhatti/٘MehrNastaliq",
+  "component": true,
+  "authors": "فرحان غنی",
+  "learn_more": "https://github.com/mfgbhatti/٘MehrNastaliq/README.md",
+  "about_url": "https://github.com/mfgbhatti/٘MehrNastaliq/",
   "license_url": "https://github.com/mfgbhatti/MehrNastaliq/blob/main/LICENSE",
   "assets": {
     "MehrNastaliqTrue": "assets/MehrNastaliq.ttf",
