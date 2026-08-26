@@ -17,9 +17,9 @@
   --tertiary: #0044aa;
 
   // Common line-heights
-  --line-height-small: 1.75;   // compact UI: menus, dropdowns, badges
-  --line-height-medium: 1.9;   // headings
-  --line-height-large: 2.2;    // normal post/body text
+  --line-height-small: 1.75; // compact UI: menus, dropdowns, badges
+  --line-height-medium: 1.9; // headings
+  --line-height-large: 2.2; // normal post/body text
 
   --font-variant-ligatures: normal;
   --font-feature-settings: normal;
@@ -39,7 +39,12 @@ body,
 }
 
 // Headings
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   line-height: var(--line-height-medium);
   font-variant-ligatures: var(--font-variant-ligatures);
   font-feature-settings: var(--font-feature-settings);
@@ -67,6 +72,8 @@ h1, h2, h3, h4, h5, h6 {
   height: auto !important;
   min-height: 2.25em;
   overflow: visible !important;
+  font-variant-ligatures: var(--font-variant-ligatures);
+  font-feature-settings: var(--font-feature-settings);
 }
 
 // Their parent list items / wrapper rows are often the actual
@@ -87,7 +94,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (prefers-color-scheme: dark) {
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-variant-ligatures: var(--font-variant-ligatures);
     font-feature-settings: var(--font-feature-settings);
   }
