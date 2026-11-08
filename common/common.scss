@@ -93,6 +93,18 @@ h6 {
   height: auto;
 }
 
+// Core clips posts with `.topic-body .cooked { overflow: hidden }`.
+// Nastaliq glyphs overhang their line box: tall marks rise ~0.2em above the
+// first line, and line-initial letters can extend up to ~0.7em past the
+// right edge, so both get sliced off. `overflow: clip` with a clip margin
+// still clips stray content (wide images etc.) but lets the glyphs paint,
+// without changing the layout. Browsers without overflow-clip-margin
+// simply keep the original clipping.
+.topic-body .cooked {
+  overflow: clip;
+  overflow-clip-margin: 0.8em;
+}
+
 @media (prefers-color-scheme: dark) {
 
   h1,
