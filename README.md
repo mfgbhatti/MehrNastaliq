@@ -72,8 +72,8 @@ In your Discourse administrator interface:
    | Setting |  Value | Purpose                  |
    | ------- | -----: | ------------------------ |
    | Small   | `1.75` | Compact text             |
-   | Medium  |  `1.9` | Headings and larger text |
-   | Large   |  `2.2` | Normal and smaller text  |
+   | Medium  |  `1.7` | Headings and larger text |
+   | Large   |  `1.8` | Normal and smaller text  |
 
    These values are intended to improve the readability and visual spacing of Nastaliq text within the Discourse interface.
 
