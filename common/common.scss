@@ -110,3 +110,13 @@ h6 {
   overflow: initial;
   margin-top: 0.875em;
 }
+
+// Horizon's card layout clamps topic-list excerpts to 2 lines with
+// overflow: hidden and line-height: 1.25. Tall Nastaliq marks rise ~1.31em
+// above the baseline, but that line box only leaves ~0.85em, so the top of
+// the first line gets sliced off. Add headroom inside the clamped box
+// (keeps the compact 1.25 spacing between the lines).
+.topic-list-item.--high-context .topic-excerpt {
+  padding-top: 0.5em;
+  padding-bottom: 0.12em;
+}
